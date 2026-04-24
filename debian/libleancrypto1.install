@@ -1,0 +1,3 @@
+usr/lib/*/libleancrypto.so.1*
+usr/lib/*/pkgconfig/leancrypto.pc
+

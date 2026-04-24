@@ -14,3 +14,14 @@ modules.order
 Module.symvers
 
 linux_kernel/lc_*.h
+.idea
+
+# Debian build artifacts
+debian/tmp
+debian/*.debhelper.log
+debian/*.substvars
+debian/debhelper-build-stamp
+debian/files
+debian/.debhelper
+obj-*-linux-gnu
+

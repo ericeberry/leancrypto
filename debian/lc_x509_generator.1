@@ -1,0 +1,21 @@
+.TH LC_X509_GENERATOR 1 "April 2026" "leancrypto 1.7.2" "User Commands"
+.SH NAME
+lc_x509_generator \- X.509 certificate generator using leancrypto
+.SH SYNOPSIS
+.B lc_x509_generator
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+.B lc_x509_generator
+is a command-line tool for generating X.509 certificates using the
+post-quantum-resistant cryptographic algorithms provided by leancrypto.
+It supports ML-DSA (Dilithium) and other signature algorithms available
+in the leancrypto library.
+.SH OPTIONS
+Run
+.B lc_x509_generator \-\-help
+for a list of available options.
+.SH SEE ALSO
+.BR lc_pkcs7_generator (1)
+.SH AUTHOR
+Stephan Mueller <smueller@chronox.de>
+

@@ -1,0 +1,22 @@
+.TH LC_PKCS7_GENERATOR 1 "April 2026" "leancrypto 1.7.2" "User Commands"
+.SH NAME
+lc_pkcs7_generator \- PKCS#7 / CMS message generator using leancrypto
+.SH SYNOPSIS
+.B lc_pkcs7_generator
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+.B lc_pkcs7_generator
+is a command-line tool for generating PKCS#7 / CMS messages using the
+post-quantum-resistant cryptographic algorithms provided by leancrypto.
+It supports ML-DSA (Dilithium) and other signature algorithms available
+in the leancrypto library, and can produce signed PKCS#7 messages with
+certificate chains.
+.SH OPTIONS
+Run
+.B lc_pkcs7_generator \-\-help
+for a list of available options.
+.SH SEE ALSO
+.BR lc_x509_generator (1)
+.SH AUTHOR
+Stephan Mueller <smueller@chronox.de>
+

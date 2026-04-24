@@ -1,0 +1,3 @@
+usr/lib/*/libleancrypto-fips.so.1*
+usr/lib/*/pkgconfig/leancrypto-fips.pc
+

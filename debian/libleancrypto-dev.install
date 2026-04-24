@@ -1,0 +1,8 @@
+usr/include/leancrypto/
+usr/include/leancrypto.h
+usr/lib/*/libleancrypto.so
+usr/lib/*/libleancrypto-fips.so
+usr/lib/*/libleancrypto.a
+usr/lib/*/libleancrypto-fips.a
+usr/lib/*/pkgconfig/
+

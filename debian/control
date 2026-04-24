@@ -1,0 +1,89 @@
+Source: leancrypto
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Eric Berry <eric.berry@canonical.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ meson (>= 0.61),
+ ninja-build,
+ doxygen <!nodoc>,
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
+Homepage: https://www.leancrypto.org
+Vcs-Git: https://github.com/smuellerDD/leancrypto.git
+Vcs-Browser: https://github.com/smuellerDD/leancrypto
+
+Package: libleancrypto1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Post-quantum-resistant cryptographic library
+ Leancrypto is a cryptographic library that exclusively contains
+ post-quantum-cryptography (PQC) resistant algorithms. It supports
+ ML-KEM (Kyber), ML-DSA (Dilithium), SLH-DSA (SPHINCS+), BIKE, HQC,
+ and classical algorithms including AES, SHA-2, SHA-3, ChaCha20, HMAC,
+ KMAC, and various KDFs and DRNGs.
+ .
+ The library is designed with minimal POSIX dependencies, is fully
+ thread-safe, supports stack-only allocation, and provides side-channel
+ resistant implementations.
+
+Package: libleancrypto-fips1
+Architecture: any
+Multi-Arch: same
+Depends: libleancrypto1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Post-quantum-resistant cryptographic library — FIPS 140 variant
+ Leancrypto is a cryptographic library that exclusively contains
+ post-quantum-cryptography (PQC) resistant algorithms.
+ .
+ This package contains the FIPS 140 compliant variant of the leancrypto
+ shared library (libleancrypto-fips.so.1). It includes a runtime integrity
+ check of the shared library binary to comply with FIPS 140 requirements.
+
+Package: libleancrypto-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libleancrypto1 (= ${binary:Version}),
+ libleancrypto-fips1 (= ${binary:Version}),
+ ${misc:Depends}
+Description: Development files for the leancrypto library
+ Leancrypto is a cryptographic library that exclusively contains
+ post-quantum-cryptography (PQC) resistant algorithms.
+ .
+ This package contains the header files, pkg-config files, unversioned
+ shared library symlinks, and static libraries needed to build applications
+ against leancrypto.
+
+Package: leancrypto-tools
+Section: utils
+Architecture: any
+Depends: libleancrypto1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Utility tools provided by the leancrypto library
+ Leancrypto is a cryptographic library that exclusively contains
+ post-quantum-cryptography (PQC) resistant algorithms.
+ .
+ This package contains utility applications built on leancrypto:
+  - sha256sum, sha384sum, sha512sum: SHA-2 hash utilities
+  - sha3-256sum, sha3-384sum, sha3-512sum: SHA-3 hash utilities
+  - ascon256-sum: Ascon-256 hash utility
+  - lc_x509_generator: X.509 certificate generator
+  - lc_pkcs7_generator: PKCS#7 message generator
+ .
+ The hash utilities serve as drop-in replacements for the standard
+ coreutils sha*sum tools, installed under /usr/libexec/leancrypto/.
+
+Package: libleancrypto-doc
+Section: doc
+Architecture: all
+Build-Profiles: <!nodoc>
+Depends: ${misc:Depends}
+Description: API documentation for the leancrypto library
+ Leancrypto is a cryptographic library that exclusively contains
+ post-quantum-cryptography (PQC) resistant algorithms.
+ .
+ This package contains the Doxygen-generated HTML API reference
+ documentation for the leancrypto library.
+

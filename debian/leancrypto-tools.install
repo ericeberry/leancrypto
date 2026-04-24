@@ -1,0 +1,4 @@
+usr/libexec/leancrypto/
+usr/bin/lc_x509_generator
+usr/bin/lc_pkcs7_generator
+
