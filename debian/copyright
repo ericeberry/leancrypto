@@ -2,6 +2,22 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: leancrypto
 Upstream-Contact: Stephan Mueller <smueller@chronox.de>
 Source: https://github.com/smuellerDD/leancrypto
+Files-Excluded:
+ apps/tests/*.efi
+ asn1/doc/*.html
+ asn1/doc/*.mhtml
+ asn1/doc/*.pdf
+ asn1/doc/draft-ietf-*.txt
+ curve25519/doc/rfc*.txt
+ doc/rfc*.txt
+ kdf/doc/rfc*.txt
+ otp/doc/rfc*.txt
+ sym/doc/rfc*.txt
+Comment: RFC and IETF draft documents are excluded from the source tarball due
+ to their non-free license (IETF BCP 78 / RFC 5378 prohibits modification and
+ derivative works). The prebuilt EFI binary is also excluded as it is only
+ needed for testing on EFI systems and is not buildable from source in this
+ package.
 
 Files: *
 Copyright: 2022-2026 Stephan Mueller <smueller@chronox.de>
@@ -18,12 +34,7 @@ Copyright: 2022-2026 Stephan Mueller <smueller@chronox.de>
            Contributors to the sphincs/sphincsplus project
 License: GPL-2.0-only or BSD-2-Clause
 
-Files: ml-kem/src/armv7/*
-Copyright: 2021 Pakize Sanal, Emrah Karagoz, Hwajeong Seo,
-                Reza Azarderakhsh, Mehran Mozaffari-Kermani
-License: MIT
-
-Files: aead/src/asm/ARMv8/gcm_neon.S
+Files: aead/src/asm/ARMv8/gfmul_neon.S
        hash/src/asm/AVX2/KeccakP-1600-AVX2.S
        hash/src/asm/AVX512/KeccakP-1600-AVX512.S
        hash/src/asm/ARMv8A/KeccakP-1600-armv8a-ce.S
@@ -63,10 +74,10 @@ Files: asn1/src/asn1_ber_bytecode.h
        asn1/src/oid_registry.h
        asn1/src/pkcs7_parser.c
        asn1/src/pkcs7_trust.c
-       asn1/src/pkcs7_verify.c
-       asn1/src/x509_cert_parser.c
-       asn1/src/x509_parser.h
-       asn1/src/x509_public_key.c
+        asn1/src/pkcs7_verify.c
+        asn1/src/x509_cert_parser.c
+        asn1/src/x509_cert_parser.h
+        asn1/src/x509_public_key.c
 Copyright: 2012 Red Hat, Inc.
            David Howells <dhowells@redhat.com>
 License: GPL-2.0-or-later or BSD-3-Clause
@@ -104,7 +115,7 @@ Files: curve448/src/avx2/*
 Copyright: 2020 Kaushik Nath, Palash Sarkar
 License: BSD-3-Clause
 
-Files: hash/api/poly1305.h
+Files: hash/api/poly1305_internal.h
        hash/src/poly1305-32.h
        hash/src/poly1305-64.h
        hash/src/poly1305.c
@@ -123,7 +134,6 @@ License: Apache-2.0
 Files: hash/src/asm/ARMv8_2x/keccakx2_armce.S
        hash/src/shake_2x_armv8.c
        ml-dsa/src/armv8/*
-       ml-kem/src/armv7/*
 Copyright: Contributors to the PQClean project
 License: CC0-1.0
 
@@ -152,10 +162,6 @@ License: GPL-2.0-only
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License along
- with this program; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  .
  On Debian systems, the complete text of the GNU General Public License
  version 2 can be found in /usr/share/common-licenses/GPL-2.

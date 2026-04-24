@@ -1,0 +1,7 @@
+# Ubuntu packages have Maintainer: Ubuntu Developers but are uploaded by
+# individual developers (Changed-By). This is expected and correct for Ubuntu.
+leancrypto source: inconsistent-maintainer * [debian/changelog]
+
+# Initial Ubuntu packaging; there are no prior Debian changes to compare against.
+leancrypto source: no-debian-changes
+

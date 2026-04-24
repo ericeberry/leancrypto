@@ -1,6 +1,9 @@
-leancrypto (1.7.2-0ubuntu1) resolute; urgency=medium
+leancrypto (1.7.2+dfsg-0ubuntu1) resolute; urgency=medium
 
+  [ Ubuntu Developers ]
   * Initial Ubuntu packaging.
+  * Repack upstream tarball as +dfsg to remove non-free RFC/IETF documents
+    (IETF BCP 78 prohibits modification) and a prebuilt EFI binary not
+    buildable from source (Files-Excluded in debian/copyright).
 
- -- Eric Berry <eric.berry@canonical.com>  Fri, 24 Apr 2026 10:30:00 +0000
-
+ -- Eric Berry <eric.berry@canonical.com>  Fri, 24 Apr 2026 14:00:11 -0700
