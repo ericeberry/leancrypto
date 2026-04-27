@@ -11,15 +11,5 @@ override_dh_auto_configure:
 		-Defi=disabled \
 		-Dsbsigntools=disabled
 
-override_dh_install:
-	dh_install
-	# If doxygen output was not generated (doxygen not available at build time),
-	# clear the doc install list so libleancrypto-doc is an empty package.
-	if [ ! -d debian/tmp/usr/share/doc/leancrypto/html ]; then \
-		echo "W: doxygen HTML not found, skipping libleancrypto-doc contents"; \
-		printf '' > debian/libleancrypto-doc.install; \
-	fi
-
 override_dh_missing:
-	dh_missing --fail-missing \
-		--exclude=usr/share/doc/leancrypto/html
+	dh_missing --fail-missing

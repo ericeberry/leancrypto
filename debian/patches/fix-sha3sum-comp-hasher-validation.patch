@@ -4,7 +4,6 @@ Description: Skip broken sha3-*sum comparison in hasher test on Ubuntu resolute
  using it to build a checker file, and deactivate that sub-test if the output
  is not a recognisable hex hash string.
 Origin: ubuntu
-Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/leancrypto/+bug/0
 Forwarded: not-needed
 Last-Update: 2026-04-27
 --- a/apps/tests/hasher-test.sh
