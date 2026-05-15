@@ -6,4 +6,4 @@ leancrypto (1.7.2+dfsg-0ubuntu1) resolute; urgency=medium
     (IETF BCP 78 prohibits modification) and a prebuilt EFI binary not
     buildable from source (Files-Excluded in debian/copyright).
 
- -- Eric Berry <eric.berry@canonical.com>  Fri, 24 Apr 2026 14:00:11 -0700
+ -- Eric Berry <eric.berry@canonical.com>  Fri, 15 May 2026 10:30:23 +0200

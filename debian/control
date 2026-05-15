@@ -65,15 +65,19 @@ Description: Utility tools provided by the leancrypto library
  Leancrypto is a cryptographic library that exclusively contains
  post-quantum-cryptography (PQC) resistant algorithms.
  .
+ The hash utilities serve as drop-in replacements for the standard
+ coreutils sha*sum tools, installed under /usr/libexec/leancrypto/.
+ Since this directory is not installed in a user's PATH, users must
+ explicitly use these utilities or add the directory to their PATH.
+ These do not automatically replace core-utils or uutils-coreutils.
+ .
  This package contains utility applications built on leancrypto:
   - sha256sum, sha384sum, sha512sum: SHA-2 hash utilities
   - sha3-256sum, sha3-384sum, sha3-512sum: SHA-3 hash utilities
   - ascon256-sum: Ascon-256 hash utility
   - lc_x509_generator: X.509 certificate generator
   - lc_pkcs7_generator: PKCS#7 message generator
- .
- The hash utilities serve as drop-in replacements for the standard
- coreutils sha*sum tools, installed under /usr/libexec/leancrypto/.
+
 
 Package: libleancrypto-doc
 Section: doc
